@@ -22,4 +22,12 @@ public class Hand extends CardCollection {
     public Iterator<Card> iterator() {
         return this.aCards.iterator();
     }
+
+    public int getSimpleCountScore(){
+        return SimpleCountStrategy.getInstance().calculateScore(aCards);
+    }
+
+    public int getNumberOfAceScore(){
+        return NumberOfAceStrategy.getInstance().calculateScore(aCards);
+    }
 }

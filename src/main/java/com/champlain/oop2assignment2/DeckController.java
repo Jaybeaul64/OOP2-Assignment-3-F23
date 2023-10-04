@@ -35,7 +35,7 @@ public class DeckController {
 
     @FXML
     protected void onScoreButtonClick() {
-        aScoreLabel.setText("Not implemented.");
+        aScoreLabel.setText("Simple Score: " + aHand.getSimpleCountScore() + "Aces score: " + aHand.getNumberOfAceScore());
     }
 
     @FXML

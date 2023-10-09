@@ -19,6 +19,20 @@ public class Card {
     }
 
     @Override
+    public boolean equals(Object card) {
+        if (this == card) {
+            return true;
+        }
+
+        if (card == null || getClass() != card.getClass()) {
+            return false;
+        }
+
+        Card otherCard = (Card) card;
+        return aRank == otherCard.aRank && aSuit.equals(otherCard.aSuit);
+    }
+
+    @Override
     public String toString() {
         return this.aRank + " of " + this.aSuit;
     }

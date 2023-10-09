@@ -16,6 +16,15 @@ public class Deck extends CardCollection implements CardSource {
         }
     }
 
+    private static Deck instance;
+
+    public static Deck getInstance() {
+        if (instance == null) {
+            instance = new Deck();
+        }
+        return instance;
+    }
+
     public void shuffle() {
         Collections.shuffle(this.aCards);
     }

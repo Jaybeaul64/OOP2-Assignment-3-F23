@@ -45,7 +45,9 @@ public class Deck extends CardCollection implements CardSource {
 
             Collections.sort(aCards, rankFirstComparator);
         }else{
-            //do Nothing for now
+            suitFirstComparator suitFirstComparator = new suitFirstComparator();
+
+            Collections.sort(aCards, suitFirstComparator);
         }
     }
 }

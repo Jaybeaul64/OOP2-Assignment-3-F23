@@ -2,20 +2,20 @@ package com.champlain.oop2assignment2;
 
 import java.util.Comparator;
 
-public class rankFirstComparator implements Comparator<Card> {
+public class suitFirstComparator implements Comparator<Card> {
     @Override
     public int compare(Card pCard1, Card pCard2) {
-        if(pCard1.getRank().ordinal() > pCard2.getRank().ordinal()){
+        if(pCard1.getSuit().ordinal() > pCard2.getSuit().ordinal()){
             return 1;
         }
-        else if(pCard1.getRank().ordinal() < pCard2.getRank().ordinal()){
+        else if(pCard1.getSuit().ordinal() < pCard2.getSuit().ordinal()){
             return -1;
         }
         else{
-            if(pCard1.getSuit().ordinal() > pCard2.getSuit().ordinal()){
+            if(pCard1.getRank().ordinal() > pCard2.getRank().ordinal()){
                 return 1;
             }
-            else if(pCard1.getSuit().ordinal() < pCard2.getSuit().ordinal()){
+            else if(pCard1.getRank().ordinal() < pCard2.getRank().ordinal()){
                 return -1;
             }
             else{

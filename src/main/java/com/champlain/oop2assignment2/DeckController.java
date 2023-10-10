@@ -1,8 +1,11 @@
 package com.champlain.oop2assignment2;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+
+import java.util.Collections;
 
 public class DeckController {
     @FXML
@@ -13,6 +16,8 @@ public class DeckController {
 
     @FXML
     private Label aScoreLabel;
+    @FXML
+    private CheckBox rankFirstCheckBox;
 
     private final Deck aDeck = new Deck();
 
@@ -30,7 +35,14 @@ public class DeckController {
 
     @FXML
     protected void onSortButtonClick() {
-        aDeckTextArea.setText("This does not sort anything yet.");
+        if(rankFirstCheckBox.isSelected()){
+            aDeck.setRankFirst(true);
+        }else{
+            aDeck.setRankFirst(false);
+        }
+        aDeck.sortDeck();
+        this.displayCardCollections();
+
     }
 
     @FXML
